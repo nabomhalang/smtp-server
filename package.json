@@ -1,0 +1,21 @@
+{
+  "name": "genshin-smtp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.13.0",
+    "mailparser": "^3.6.4",
+    "smtp-server": "^3.11.0"
+  },
+  "devDependencies": {
+    "@types/mailparser": "^3.4.0",
+    "@types/smtp-server": "^3.5.7",
+    "prisma": "^4.13.0"
+  }
+}

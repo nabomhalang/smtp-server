@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String   @id @default(uuid())
+  email    String   @db.VarChar(256)
+  user     String   @db.VarChar(64)
+  pass     String   @db.VarChar(64)
+  disp     String   @db.VarChar(32)
+  sex      Int      @db.UnsignedInt
+  createAt DateTime @default(now())
+  updateAt DateTime @updatedAt
+  verified Int      @default(0) @db.UnsignedInt
+
+  @@unique([email, user])
+}
+
+model Email {
+  id             String   @id @default(uuid())
+  Email_From     String   @db.Text
+  Email_To       String   @db.Text
+  Email_subject  String   @db.Text
+  Email_textBody String   @db.Text
+  Email_htmlBody String   @db.Text
+  createAt       DateTime @default(now())
+  updateAt       DateTime @updatedAt
+}
